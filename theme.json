@@ -1,0 +1,222 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#464feb",
+      "primaryHover": "#3d43d4",
+      "foregroundOnBrand": "#ffffff"
+    },
+    "neutral": {
+      "background1": "#ffffff",
+      "background2": "#fafafa",
+      "background3": "#f5f5f5",
+      "background4": "#e6e6e6",
+      "foreground1": "#242424",
+      "foreground2": "#424242",
+      "foreground3": "#616161",
+      "foreground4": "#707070",
+      "foregroundDisabled": "#bdbdbd",
+      "foregroundInverted": "#ffffff",
+      "stroke1": "#d1d1d1",
+      "stroke2": "#e0e0e0",
+      "stroke3": "#f0f0f0",
+      "strokeAccessible": "#616161",
+      "grey96": "#f5f5f5",
+      "grey14": "#242424"
+    },
+    "transparent": {
+      "background": "#ffffff00",
+      "stroke": "#ffffff00",
+      "backgroundDark": "#0000001a"
+    },
+    "success": {
+      "foreground3": "#107c10",
+      "tintBackground": "#efeae7",
+      "tintForeground": "#272320",
+      "tintStroke": "#e2ddd9"
+    },
+    "link": "#115ea3",
+    "accent": {
+      "tertiary": "#e4e4e4"
+    },
+    "gradient": {
+      "stop1": "#ff5f3d",
+      "stop2": "#d2007e",
+      "stop3": "#0d91e1",
+      "foregroundSecondary": "#d660ff"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "base": "Segoe UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
+      "sans": "Segoe Sans, 'Segoe UI', sans-serif"
+    },
+    "fontSize": {
+      "200": "12px",
+      "300": "14px",
+      "400": "16px",
+      "500": "20px",
+      "800": "32px",
+      "caption1": "12px",
+      "caption2": "11px",
+      "body1": "14px",
+      "body2": "16px",
+      "subtitle1": "20px",
+      "subtitle2": "16px",
+      "title1": "32px",
+      "title3": "24px",
+      "paragraph": "16px"
+    },
+    "fontWeight": {
+      "regular": 400,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "200": "16px",
+      "300": "20px",
+      "400": "22px",
+      "800": "40px",
+      "caption1": "16px",
+      "caption2": "13px",
+      "body1": "20px",
+      "body2": "24px",
+      "subtitle1": "26px",
+      "subtitle2": "22px",
+      "title1": "40px",
+      "title3": "32px",
+      "paragraph": "28px"
+    },
+    "styles": {
+      "body1": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "14px",
+        "fontWeight": 400,
+        "lineHeight": "20px",
+        "letterSpacing": "0"
+      },
+      "body1Strong": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "14px",
+        "fontWeight": 600,
+        "lineHeight": "20px",
+        "letterSpacing": "0"
+      },
+      "body1Stronger": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "14px",
+        "fontWeight": 700,
+        "lineHeight": "20px",
+        "letterSpacing": "0"
+      },
+      "body2": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "lineHeight": "24px",
+        "letterSpacing": "0"
+      },
+      "caption1": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "12px",
+        "fontWeight": 400,
+        "lineHeight": "16px",
+        "letterSpacing": "0"
+      },
+      "caption1Strong": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "12px",
+        "fontWeight": 600,
+        "lineHeight": "16px",
+        "letterSpacing": "0"
+      },
+      "subtitle2": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "16px",
+        "fontWeight": 600,
+        "lineHeight": "22px",
+        "letterSpacing": "0"
+      },
+      "subtitle2Stronger": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "16px",
+        "fontWeight": 700,
+        "lineHeight": "22px",
+        "letterSpacing": "0"
+      },
+      "title1": {
+        "fontFamily": "Segoe Sans",
+        "fontSize": "32px",
+        "fontWeight": 700,
+        "lineHeight": "40px",
+        "letterSpacing": "0"
+      },
+      "title3": {
+        "fontFamily": "Segoe UI",
+        "fontSize": "24px",
+        "fontWeight": 600,
+        "lineHeight": "32px",
+        "letterSpacing": "0"
+      }
+    }
+  },
+  "spacing": {
+    "none": "0",
+    "xxs": "2px",
+    "xs": "4px",
+    "s": "8px",
+    "sNudge": "6px",
+    "m": "12px",
+    "mNudge": "10px",
+    "l": "16px",
+    "xl": "20px",
+    "xxl": "24px",
+    "xxxl": "32px"
+  },
+  "borderRadius": {
+    "none": "0",
+    "small": "2px",
+    "medium": "4px",
+    "large": "6px",
+    "button": "8px",
+    "card": "8px",
+    "cardLarge": "16px",
+    "2xlarge": "12px",
+    "3xlarge": "16px",
+    "4xlarge": "24px",
+    "circular": "9999px"
+  },
+  "shadows": {
+    "shadow04": "0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14)",
+    "shadow08": "0px 0px 2px rgba(0, 30, 68, 0.12), 0px 4px 8px rgba(0, 30, 68, 0.06)",
+    "shadow16": "0px 0px 2px rgba(0, 0, 0, 0.12), 0px 8px 16px rgba(0, 0, 0, 0.14)",
+    "shadow64": "0px 0px 8px rgba(0, 0, 0, 0.20), 0px 32px 64px rgba(0, 0, 0, 0.24)",
+    "flair1": "0px 2px 8px rgba(0, 30, 68, 0.06), 0px 10px 12px rgba(0, 30, 68, 0.04)",
+    "floatingActionButton": "0px 4px 12px rgba(0, 0, 0, 0.14), 0px 0px 0px rgba(0, 0, 0, 0.05)",
+    "elevation3": "0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 4px 12px 1px rgba(0, 0, 0, 0.14)"
+  },
+  "strokeWidth": {
+    "thin": "1px",
+    "thick": "2px"
+  },
+  "sizes": {
+    "cardHeightBy1": "88px",
+    "cardHeightBy2": "200px",
+    "cardHeightBy4": "424px",
+    "cardWidthMax3by": "312px",
+    "avatarCircular": "36px",
+    "iconSmall": "16px",
+    "iconMedium": "20px",
+    "iconLarge": "24px",
+    "ctrlLarge": "48px",
+    "badge": "20px"
+  },
+  "effects": {
+    "backgroundBlur": "blur(60px)"
+  },
+  "assets": {
+    "placeholders": {
+      "avatar": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='18' fill='%23464feb'/%3E%3C/svg%3E",
+      "newsImage": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f5f5f5'/%3E%3C/svg%3E"
+    }
+  }
+}

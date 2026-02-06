@@ -1,0 +1,133 @@
+@import url('https://res.cloudinary.com/sagacity/raw/upload/fonts-cdnfonts-test.css');
+
+:root {
+  /* Colors */
+  --color-brand-primary: #464feb;
+  --color-brand-hover: #3d43d4;
+  --color-brand-foreground: #ffffff;
+
+  --color-neutral-bg-1: #ffffff;
+  --color-neutral-bg-2: #fafafa;
+  --color-neutral-bg-3: #f5f5f5;
+  --color-neutral-bg-4: #e6e6e6;
+
+  --color-neutral-fg-1: #242424;
+  --color-neutral-fg-2: #424242;
+  --color-neutral-fg-3: #616161;
+  --color-neutral-fg-4: #707070;
+
+  --color-neutral-stroke-1: #d1d1d1;
+  --color-neutral-stroke-2: #e0e0e0;
+  --color-neutral-stroke-3: #f0f0f0;
+
+  --color-link: #115ea3;
+  --color-success: #107c10;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  --font-size-200: 12px;
+  --font-size-300: 14px;
+  --font-size-400: 16px;
+  --font-size-500: 20px;
+  --font-size-800: 32px;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-200: 16px;
+  --line-height-300: 20px;
+  --line-height-400: 22px;
+  --line-height-800: 40px;
+
+  /* Spacing */
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-s-nudge: 6px;
+  --spacing-m: 12px;
+  --spacing-m-nudge: 10px;
+  --spacing-l: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px;
+  --spacing-xxxl: 32px;
+
+  /* Border Radius */
+  --radius-small: 2px;
+  --radius-medium: 4px;
+  --radius-large: 6px;
+  --radius-button: 8px;
+  --radius-card: 8px;
+  --radius-card-large: 16px;
+  --radius-2xlarge: 12px;
+  --radius-3xlarge: 16px;
+  --radius-circular: 9999px;
+
+  /* Shadows */
+  --shadow-04: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+  --shadow-08: 0px 0px 2px rgba(0, 30, 68, 0.12), 0px 4px 8px rgba(0, 30, 68, 0.06);
+  --shadow-16: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 8px 16px rgba(0, 0, 0, 0.14);
+  --shadow-flair: 0px 2px 8px rgba(0, 30, 68, 0.06), 0px 10px 12px rgba(0, 30, 68, 0.04);
+
+  /* Sizes */
+  --size-avatar: 36px;
+  --size-icon-small: 16px;
+  --size-icon-medium: 20px;
+  --size-icon-large: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-300);
+  line-height: var(--line-height-300);
+  color: var(--color-neutral-fg-1);
+  background-color: var(--color-neutral-bg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-stroke-2);
+  border-radius: var(--radius-medium);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-stroke-1);
+}
