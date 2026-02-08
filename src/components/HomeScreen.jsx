@@ -16,6 +16,32 @@ import headphone from '../assets/home-icons/headphone.png'
 import lightRail from '../assets/home-icons/light-rail.png'
 import speechBalloon from '../assets/home-icons/speech-balloon.png'
 import yenBanknote from '../assets/home-icons/yen-banknote.png'
+import perksLogo from '../assets/home-icons/Perks +.png'
+import perksBase from '../assets/home-icons/Base.png'
+import perksSegment from '../assets/home-icons/Segment.png'
+import perksNumber from '../assets/home-icons/60.png'
+import perksButton from '../assets/home-icons/Button.png'
+
+// Import priority assets
+import priorityTitle from '../assets/priority-icons/Title.png'
+import priorityCheckbox1 from '../assets/priority-icons/Selection Container (24px).png'
+import priorityCheckbox2 from '../assets/priority-icons/Selection Container (24px)-1.png'
+import priorityCheckbox3 from '../assets/priority-icons/Selection Container (24px)-2.png'
+import priorityAvatar1 from '../assets/priority-icons/Avatar Image Slot.png'
+import priorityAvatar2 from '../assets/priority-icons/Avatar Image Slot-1.png'
+import priorityAvatar3 from '../assets/priority-icons/Avatar Image Slot-2.png'
+import priorityText1 from '../assets/priority-icons/PersonaText-Default.png'
+import priorityText2 from '../assets/priority-icons/PersonaText-Default-1.png'
+import priorityText3 from '../assets/priority-icons/PersonaText-Default-2.png'
+import priorityButton1 from '../assets/priority-icons/ButtonBase.png'
+import priorityButton2 from '../assets/priority-icons/ButtonBase-1.png'
+import priorityButton3 from '../assets/priority-icons/ButtonBase-2.png'
+import priorityNavLeft from '../assets/priority-icons/Shape.png'
+import priorityNavRight from '../assets/priority-icons/Shape-2.png'
+import priorityDot1 from '../assets/priority-icons/Active.png'
+import priorityDot2 from '../assets/priority-icons/Active-1.png'
+import priorityDot3 from '../assets/priority-icons/Active-2.png'
+import priorityDot4 from '../assets/priority-icons/Active-3.png'
 
 // Import header assets
 import headerAgentColor1 from '../assets/header-icons/Agent/Color 1.png'
@@ -280,21 +306,19 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
           <div className="perks-card">
             <h3 className="perks-card-title">Perks +</h3>
             <div className="perks-progress">
-              <svg className="progress-circle" viewBox="0 0 120 120">
-                <circle className="progress-bg" cx="60" cy="60" r="50" />
-                <circle className="progress-bar" cx="60" cy="60" r="50" strokeDasharray="314" strokeDashoffset="94" />
-              </svg>
-              <div className="progress-number">50</div>
+              <img src={perksBase} alt="" className="perks-base" />
+              <img src={perksSegment} alt="" className="perks-segment" />
+              <div className="perks-amount">$506</div>
             </div>
             <div className="perks-footer">
-              <button className="perks-btn">AI Suggestions</button>
+              <button className="perks-btn">File a claim</button>
               <button className="perks-btn-small">+2</button>
             </div>
           </div>
 
           <div className="priorities-card">
             <div className="priorities-header">
-              <h3 className="priorities-title">Top priorities</h3>
+              <img src={priorityTitle} alt="Top priorities" className="priorities-title-img" />
               <button className="priorities-settings-btn">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M10.5 3.5a1 1 0 10-2 0v.55a5.5 5.5 0 000 10.9v.55a1 1 0 102 0v-.55a5.5 5.5 0 000-10.9V3.5zm-1 2.45a4.5 4.5 0 010 8.1V5.95z" fill="currentColor"/>
@@ -304,62 +328,33 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
             </div>
             <div className="priorities-list">
               <div className="priority-item">
-                <input type="checkbox" className="priority-checkbox" />
-                <div className="priority-icon" style={{background: '#4CC2FF'}}>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                    <path d="M4 3h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm1 2v10h10V5H5z"/>
-                  </svg>
-                </div>
-                <div className="priority-content">
-                  <div className="priority-title">Create a brief for Summer Campai...</div>
-                  <div className="priority-subtitle">First review is scheduled for this Friday</div>
-                </div>
-                <button className="priority-action-btn">Draft brief</button>
+                <img src={priorityCheckbox1} alt="" className="priority-checkbox-img" />
+                <img src={priorityAvatar1} alt="" className="priority-avatar-img" />
+                <img src={priorityText1} alt="Create a brief for Summer Campaign" className="priority-text-img" />
+                <img src={priorityButton1} alt="Draft brief" className="priority-button-img" />
               </div>
               <div className="priority-item">
-                <input type="checkbox" className="priority-checkbox" />
-                <div className="priority-icon" style={{background: '#0078D4'}}>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                    <rect x="4" y="4" width="12" height="12" rx="1"/>
-                  </svg>
-                </div>
-                <div className="priority-content">
-                  <div className="priority-title">Reply to Fw: Q3 Launch</div>
-                  <div className="priority-subtitle">Barbara Bauer is waiting since yesterday...</div>
-                </div>
-                <button className="priority-action-btn">Draft reply</button>
+                <img src={priorityCheckbox2} alt="" className="priority-checkbox-img" />
+                <img src={priorityAvatar2} alt="" className="priority-avatar-img" />
+                <img src={priorityText2} alt="Reply to Fw: Q3 Launch" className="priority-text-img" />
+                <img src={priorityButton2} alt="Draft reply" className="priority-button-img" />
               </div>
               <div className="priority-item">
-                <input type="checkbox" className="priority-checkbox" />
-                <div className="priority-icon" style={{background: '#C239B3'}}>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                    <path d="M5 5h10v10H5z"/>
-                  </svg>
-                </div>
-                <div className="priority-content">
-                  <div className="priority-title">Create social media post illu...</div>
-                  <div className="priority-subtitle">Adam Morris is asking to see upd...</div>
-                </div>
-                <button className="priority-action-btn">Draft illustration</button>
+                <img src={priorityCheckbox3} alt="" className="priority-checkbox-img" />
+                <img src={priorityAvatar3} alt="" className="priority-avatar-img" />
+                <img src={priorityText3} alt="Create social media post" className="priority-text-img" />
+                <img src={priorityButton3} alt="Draft illustration" className="priority-button-img" />
               </div>
             </div>
             <div className="priorities-pagination">
-              <button className="pagination-btn">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M10.5 3l-5 5 5 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              <img src={priorityNavLeft} alt="Previous" className="pagination-nav-img" />
               <div className="pagination-dots">
-                <span className="pagination-dot active"></span>
-                <span className="pagination-dot"></span>
-                <span className="pagination-dot"></span>
-                <span className="pagination-dot"></span>
+                <img src={priorityDot1} alt="" className="pagination-dot-img" />
+                <img src={priorityDot2} alt="" className="pagination-dot-img" />
+                <img src={priorityDot3} alt="" className="pagination-dot-img" />
+                <img src={priorityDot4} alt="" className="pagination-dot-img" />
               </div>
-              <button className="pagination-btn">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M5.5 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              <img src={priorityNavRight} alt="Next" className="pagination-nav-img" />
             </div>
           </div>
         </div>
