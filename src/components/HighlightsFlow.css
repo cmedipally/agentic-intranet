@@ -1,0 +1,214 @@
+/* Highlights Flow Overlay */
+.highlights-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.highlights-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Close button */
+.highlights-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.highlights-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Slide container */
+.highlights-slide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 60px 0 100px 0;
+}
+
+.highlights-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Navigation controls */
+.highlights-controls {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 16px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.highlights-nav-btn,
+.highlights-play-pause {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.highlights-nav-btn:hover:not(:disabled),
+.highlights-play-pause:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.highlights-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.highlights-progress {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 60px;
+  justify-content: center;
+}
+
+.highlights-current {
+  font-weight: 600;
+}
+
+.highlights-separator {
+  opacity: 0.5;
+}
+
+.highlights-total {
+  opacity: 0.7;
+}
+
+/* Progress bar */
+.highlights-progress-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.highlights-progress-segment {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.highlights-progress-segment.active {
+  background: white;
+}
+
+.highlights-progress-segment:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.highlights-progress-segment.active:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .highlights-container {
+    width: 95%;
+    height: 95vh;
+  }
+
+  .highlights-close {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .highlights-controls {
+    bottom: 70px;
+    padding: 12px 20px;
+    gap: 16px;
+  }
+
+  .highlights-progress-bar {
+    width: 90%;
+    bottom: 15px;
+  }
+
+  .highlights-slide {
+    padding: 50px 0 90px 0;
+  }
+}

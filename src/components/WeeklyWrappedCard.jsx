@@ -17,7 +17,7 @@ const WeeklyWrappedCard = ({ onViewWrap }) => {
             <span className="grid-image-overlay">New agent capabilities in Microsoft Copilot unlock business value</span>
           </div>
           <div className="grid-image" style={{gridArea: '3 / 3 / 4 / 4'}}></div>
-          <button className="play-highlights-btn">
+          <button className="play-highlights-btn" onClick={onViewWrap}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <circle cx="10" cy="10" r="8" fill="none" stroke="white" strokeWidth="1.5"/>
               <path d="M8 6.5l5.5 3.5-5.5 3.5z" fill="white"/>
