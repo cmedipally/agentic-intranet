@@ -729,7 +729,7 @@
   display: flex;
   gap: var(--spacing-l);
   margin-top: var(--spacing-xxl);
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 /* Perks Card */
@@ -742,101 +742,76 @@
   width: 260px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-.perks-card-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #242424;
-  line-height: 20px;
-  margin: 0;
-  text-align: left;
-}
-
-.perks-progress {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
+.perks-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.perks-base {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: contain;
-  z-index: 1;
-}
-
-.perks-segment {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: contain;
-  z-index: 2;
-}
-
-.perks-amount {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 32px;
-  font-weight: 600;
-  color: #242424;
-  z-index: 3;
-}
-
-.perks-footer {
-  display: flex;
   gap: 8px;
-  align-items: center;
+  margin-bottom: 0;
 }
 
-.perks-btn {
-  flex: 1;
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #D1D1D1;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 400;
-  color: #242424;
+.perks-viva-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.perks-title-img {
+  height: 11px;
+  width: auto;
+}
+
+.perks-avatars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.perks-avatar-cluster {
+  width: 72px;
+  height: 72px;
+}
+
+.perks-heading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.perks-primary-text {
+  height: 16px;
+  width: auto;
+}
+
+.perks-message {
+  margin-bottom: 0;
+  background: #E1F0FF;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.perks-ai-body {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.perks-action {
+  display: flex;
+  justify-content: center;
+}
+
+.perks-summarize-btn {
+  width: 163px;
+  height: 32px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: opacity 0.2s;
 }
 
-.perks-btn:hover {
-  background: #F5F5F5;
-  border-color: #B0B0B0;
-}
-
-.perks-btn-small {
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #D1D1D1;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 400;
-  color: #242424;
-  cursor: pointer;
-  transition: all 0.2s;
-  min-width: 56px;
-}
-
-.perks-btn-small:hover {
-  background: #F5F5F5;
-  border-color: #B0B0B0;
+.perks-summarize-btn:hover {
+  opacity: 0.8;
 }
 
 /* Priorities Card */

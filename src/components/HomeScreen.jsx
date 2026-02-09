@@ -16,11 +16,13 @@ import headphone from '../assets/home-icons/headphone.png'
 import lightRail from '../assets/home-icons/light-rail.png'
 import speechBalloon from '../assets/home-icons/speech-balloon.png'
 import yenBanknote from '../assets/home-icons/yen-banknote.png'
-import perksLogo from '../assets/home-icons/Perks +.png'
-import perksBase from '../assets/home-icons/Base.png'
-import perksSegment from '../assets/home-icons/Segment.png'
-import perksNumber from '../assets/home-icons/60.png'
-import perksButton from '../assets/home-icons/Button.png'
+// Import perks assets
+import perksVivaIcon from '../assets/perks-icons/viva-engage-icon.svg'
+import perksTitle from '../assets/perks-icons/title.svg'
+import perksAvatar from '../assets/perks-icons/avatar.svg'
+import perksPrimaryText from '../assets/perks-icons/primary-text.svg'
+import perksAiBody from '../assets/perks-icons/ai-body.svg'
+import perksSummarizeButton from '../assets/perks-icons/summarize-all-activity-button.png'
 
 // Import priority assets
 import priorityTitle from '../assets/priority-icons/Title.png'
@@ -304,15 +306,21 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
 
         <div className="bottom-cards-row">
           <div className="perks-card">
-            <h3 className="perks-card-title">Perks +</h3>
-            <div className="perks-progress">
-              <img src={perksBase} alt="" className="perks-base" />
-              <img src={perksSegment} alt="" className="perks-segment" />
-              <div className="perks-amount">$506</div>
+            <div className="perks-header">
+              <img src={perksVivaIcon} alt="Viva Engage" className="perks-viva-icon" />
+              <img src={perksTitle} alt="Engage updates" className="perks-title-img" />
             </div>
-            <div className="perks-footer">
-              <button className="perks-btn">File a claim</button>
-              <button className="perks-btn-small">+2</button>
+            <div className="perks-avatars">
+              <img src={perksAvatar} alt="User avatars" className="perks-avatar-cluster" />
+            </div>
+            <div className="perks-heading">
+              <img src={perksPrimaryText} alt="New updates" className="perks-primary-text" />
+            </div>
+            <div className="perks-message">
+              <img src={perksAiBody} alt="Activity summary" className="perks-ai-body" />
+            </div>
+            <div className="perks-action">
+              <img src={perksSummarizeButton} alt="Summarize all activity" className="perks-summarize-btn" />
             </div>
           </div>
 
