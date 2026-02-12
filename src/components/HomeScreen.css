@@ -507,6 +507,19 @@
   padding: 6px 8px;
 }
 
+.home-chat-icon-only {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.chat-shape-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
 .home-chat-mic {
   width: 40px;
   height: 40px;

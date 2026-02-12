@@ -23,6 +23,7 @@ import headphone from '../assets/home-icons/headphone.png'
 import lightRail from '../assets/home-icons/light-rail.png'
 import speechBalloon from '../assets/home-icons/speech-balloon.png'
 import yenBanknote from '../assets/home-icons/yen-banknote.png'
+import shapeIcon from '../assets/home-icons/shape-icon.png'
 // Import perks assets
 import perksVivaIcon from '../assets/perks-icons/viva-engage-icon.svg'
 import perksTitle from '../assets/perks-icons/title.svg'
@@ -183,6 +184,7 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
                 <span>Tools</span>
               </button>
               <button className="home-chat-btn home-chat-labeled home-chat-sources" aria-label="Sources">
+                <img src={shapeIcon} alt="" className="chat-shape-icon" />
                 <span>Sources</span>
               </button>
               <button className="home-chat-btn home-chat-mic" aria-label="Voice input">
