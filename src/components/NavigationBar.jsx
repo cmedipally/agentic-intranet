@@ -1,33 +1,34 @@
 import { useState } from 'react'
 import './NavigationBar.css'
 
-// Import navigation assets
-import appBrand from '../assets/nav-icons/.App brand.png'
-import rightSide from '../assets/nav-icons/Right Side.png'
+// Import navigation assets - icons only
+import copilotLogo from '../assets/nav-icons/copilot-logo.png'
+import menuToggle from '../assets/nav-icons/menu-toggle.png'
 import searchIcon from '../assets/nav-icons/Icon.png'
-import searchTitle from '../assets/nav-icons/Tab title.png'
 import chatIcon from '../assets/nav-icons/Icon-1.png'
-import chatTitle from '../assets/nav-icons/Tab title-1.png'
-import agentsTitle from '../assets/nav-icons/Tab title-2.png'
-import chevron from '../assets/nav-icons/Chevron.png'
 import researcherIcon from '../assets/nav-icons/Icon-2.png'
-import researcherTitle from '../assets/nav-icons/Tab title-3.png'
 import analystIcon from '../assets/nav-icons/Icon-3.png'
-import analystTitle from '../assets/nav-icons/Tab title-4.png'
-import zavaIcon from '../assets/nav-icons/Logo + Title.png'
-import zavaTitle from '../assets/nav-icons/Tab title-5.png'
-import activeIndicator from '../assets/nav-icons/active-5.png'
-import conversationsTitle from '../assets/nav-icons/Tab title-6.png'
-import chevron1 from '../assets/nav-icons/Chevron-1.png'
-import pagesTitle from '../assets/nav-icons/Tab title-7.png'
-import chevron2 from '../assets/nav-icons/Chevron-2.png'
+import contosoIcon from '../assets/nav-icons/Logo + Title.png'
 import notebooksIcon from '../assets/nav-icons/Icon-4.png'
-import notebooksTitle from '../assets/nav-icons/Tab title-8.png'
 import createIcon from '../assets/nav-icons/Icon-5.png'
-import createTitle from '../assets/nav-icons/Tab title-9.png'
 import appsIcon from '../assets/nav-icons/Icon-6.png'
-import appsTitle from '../assets/nav-icons/Tab title-10.png'
-import bottomBar from '../assets/nav-icons/.Bottom bar - Me control.png'
+import userAvatar from '../assets/nav-icons/user-avatar.png'
+
+// SVG chevron as component
+const ChevronIcon = ({ isExpanded }) => (
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    style={{
+      transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+      transition: 'transform 0.2s'
+    }}
+  >
+    <path d="M2 4L6 8L10 4" stroke="#424242" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
 
 const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
   const [isAgentsExpanded, setIsAgentsExpanded] = useState(true)
@@ -39,38 +40,43 @@ const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
       id: 'researcher',
       name: 'Researcher',
       icon: researcherIcon,
-      title: researcherTitle
+      color: '#0078D4' // Blue
     },
     {
       id: 'analyst',
       name: 'Analyst',
       icon: analystIcon,
-      title: analystTitle
+      color: '#8764B8' // Purple
     },
     {
       id: 'contoso-agent',
-      name: 'ZavaCore',
-      icon: zavaIcon,
-      title: zavaTitle
+      name: 'Contoso agent',
+      icon: contosoIcon,
+      color: '#D83B01' // Orange
     }
   ]
 
   return (
     <nav className="navigation-bar">
       <div className="nav-header">
-        <img src={appBrand} alt="M365 Copilot" className="nav-logo-img" />
-        <img src={rightSide} alt="Toggle" className="nav-toggle-img" />
+        <div className="nav-brand">
+          <img src={copilotLogo} alt="M365 Copilot" className="nav-logo" />
+          <span className="nav-title">M365 Copilot</span>
+        </div>
+        <button className="nav-toggle" aria-label="Toggle navigation">
+          <img src={menuToggle} alt="" className="nav-toggle-icon" />
+        </button>
       </div>
 
       <div className="nav-content">
         <button className="nav-item">
-          <img src={searchIcon} alt="Search" className="nav-icon" />
-          <img src={searchTitle} alt="Search" className="nav-title-img" />
+          <img src={searchIcon} alt="" className="nav-icon" />
+          <span className="nav-label">Search</span>
         </button>
 
         <button className="nav-item">
-          <img src={chatIcon} alt="Chat" className="nav-icon" />
-          <img src={chatTitle} alt="Chat" className="nav-title-img" />
+          <img src={chatIcon} alt="" className="nav-icon" />
+          <span className="nav-label">Chat</span>
         </button>
 
         <div className="nav-section">
@@ -78,13 +84,8 @@ const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
             className="nav-section-header"
             onClick={() => setIsAgentsExpanded(!isAgentsExpanded)}
           >
-            <img src={agentsTitle} alt="Agents" className="nav-section-title" />
-            <img
-              src={chevron}
-              alt="Toggle"
-              className="nav-chevron"
-              style={{ transform: isAgentsExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
-            />
+            <span className="nav-section-title">Agents</span>
+            <ChevronIcon isExpanded={isAgentsExpanded} />
           </button>
           {isAgentsExpanded && (
             <div className="nav-section-content">
@@ -97,11 +98,8 @@ const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
                     onHomeClick()
                   }}
                 >
-                  {selectedThread === agent.id && (
-                    <img src={activeIndicator} alt="" className="active-indicator" />
-                  )}
-                  <img src={agent.icon} alt={agent.name} className="agent-icon-img" />
-                  <img src={agent.title} alt={agent.name} className="agent-title-img" />
+                  <img src={agent.icon} alt="" className="agent-icon" />
+                  <span className="agent-label">{agent.name}</span>
                 </button>
               ))}
             </div>
@@ -113,13 +111,8 @@ const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
             className="nav-section-header"
             onClick={() => setIsConversationsExpanded(!isConversationsExpanded)}
           >
-            <img src={conversationsTitle} alt="Conversations" className="nav-section-title" />
-            <img
-              src={chevron1}
-              alt="Toggle"
-              className="nav-chevron"
-              style={{ transform: isConversationsExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
-            />
+            <span className="nav-section-title">Conversations</span>
+            <ChevronIcon isExpanded={isConversationsExpanded} />
           </button>
         </div>
 
@@ -128,34 +121,41 @@ const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
             className="nav-section-header"
             onClick={() => setIsPagesExpanded(!isPagesExpanded)}
           >
-            <img src={pagesTitle} alt="Pages" className="nav-section-title" />
-            <img
-              src={chevron2}
-              alt="Toggle"
-              className="nav-chevron"
-              style={{ transform: isPagesExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
-            />
+            <span className="nav-section-title">Pages</span>
+            <ChevronIcon isExpanded={isPagesExpanded} />
           </button>
         </div>
 
         <button className="nav-item">
-          <img src={notebooksIcon} alt="Notebooks" className="nav-icon" />
-          <img src={notebooksTitle} alt="Notebooks" className="nav-title-img" />
+          <img src={notebooksIcon} alt="" className="nav-icon" />
+          <span className="nav-label">Notebooks</span>
         </button>
 
         <button className="nav-item">
-          <img src={createIcon} alt="Create" className="nav-icon" />
-          <img src={createTitle} alt="Create" className="nav-title-img" />
+          <img src={createIcon} alt="" className="nav-icon" />
+          <span className="nav-label">Create</span>
         </button>
 
         <button className="nav-item">
-          <img src={appsIcon} alt="Apps" className="nav-icon" />
-          <img src={appsTitle} alt="Apps" className="nav-title-img" />
+          <img src={appsIcon} alt="" className="nav-icon" />
+          <span className="nav-label">Apps</span>
         </button>
       </div>
 
       <div className="nav-footer">
-        <img src={bottomBar} alt="Erika Fuller" className="bottom-bar-img" />
+        <div className="user-profile">
+          <img src={userAvatar} alt="User profile" className="user-avatar" />
+          <div className="user-info">
+            <span className="user-name">Erika Fuller</span>
+          </div>
+          <button className="user-menu-btn" aria-label="User menu">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="4" r="1" fill="#424242"/>
+              <circle cx="8" cy="8" r="1" fill="#424242"/>
+              <circle cx="8" cy="12" r="1" fill="#424242"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
   )
