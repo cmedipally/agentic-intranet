@@ -50,7 +50,7 @@ const NavigationBar = ({ selectedThread, onThreadSelect, onHomeClick }) => {
     },
     {
       id: 'contoso-agent',
-      name: 'Contoso agent',
+      name: 'ZavaCore agent',
       icon: contosoIcon,
       color: '#D83B01' // Orange
     }
