@@ -3,6 +3,7 @@ import engageIcon from '../assets/home-icons/engage-icon.png'
 import avatar1 from '../assets/home-icons/engage-avatar-1.png'
 import avatar2 from '../assets/home-icons/engage-avatar-2.png'
 import avatar3 from '../assets/home-icons/engage-avatar-3.png'
+import settingsIcon from '../assets/home-icons/settings-icon.png'
 
 const EngageCard = () => {
   return (
@@ -10,9 +11,7 @@ const EngageCard = () => {
       <div className="engage-card-header">
         <h3 className="engage-card-title">Engage</h3>
         <button className="engage-settings-btn" aria-label="Settings">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M9.405 1.653a1.5 1.5 0 0 0-2.81 0l-.35.933a.5.5 0 0 1-.28.28l-.933.35a1.5 1.5 0 0 0 0 2.81l.933.35a.5.5 0 0 1 .28.28l.35.933a1.5 1.5 0 0 0 2.81 0l.35-.933a.5.5 0 0 1 .28-.28l.933-.35a1.5 1.5 0 0 0 0-2.81l-.933-.35a.5.5 0 0 1-.28-.28l-.35-.933zM8 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm1.5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-6-3.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-          </svg>
+          <img src={settingsIcon} alt="" className="settings-icon" />
         </button>
       </div>
 

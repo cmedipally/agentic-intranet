@@ -45,6 +45,12 @@
   color: #242424;
 }
 
+.settings-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
 .engage-body {
   display: flex;
   flex-direction: column;

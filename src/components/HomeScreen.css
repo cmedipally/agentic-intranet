@@ -532,7 +532,7 @@
 .prompt-starters {
   display: flex;
   gap: var(--spacing-m);
-  margin-bottom: var(--spacing-xxl);
+  margin-bottom: var(--spacing-m);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -619,6 +619,7 @@
   text-align: right;
   border-radius: var(--radius-medium);
   transition: background-color 0.2s;
+  margin-top: -8px;
 }
 
 .see-more:hover {
