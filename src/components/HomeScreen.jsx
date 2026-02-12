@@ -168,7 +168,7 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
           <div className="home-chat-input">
             <input
               type="text"
-              placeholder="Message ZavaCore agent"
+              placeholder="Message ZavaCore Agent"
               value={messageInput}
               onChange={(e) => setMessageInput(e.target.value)}
             />
@@ -245,7 +245,7 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
                 <p className="catch-up-main-title">
                   Carole, here's your <span className="catch-up-title-italic">daily</span> update
                   <br />
-                  <span className="catch-up-subtitle">Zava highlights, personalized for you</span>
+                  <span className="catch-up-subtitle">ZavaCore highlights, personalized for you</span>
                 </p>
                 <button className="catch-up-cta-btn">
                   <img src={replayIconNew} alt="" className="catch-up-cta-icon" />
