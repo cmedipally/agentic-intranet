@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 1989.49 543.385" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Radial brand gradient" opacity="0.4" filter="url(#filter0_f_0_138)">
+<ellipse cx="994.745" cy="271.692" rx="920.745" ry="197.692" fill="url(#paint0_radial_0_138)" fill-opacity="0.8"/>
+</g>
+<defs>
+<filter id="filter0_f_0_138" x="0" y="0" width="1989.49" height="543.385" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="37" result="effect1_foregroundBlur_0_138"/>
+</filter>
+<radialGradient id="paint0_radial_0_138" cx="0" cy="0" r="1" gradientTransform="matrix(-1356.18 45.4465 -2202.36 -1054.44 1861.17 175.118)" gradientUnits="userSpaceOnUse">
+<stop offset="0.18" stop-color="#FF5700"/>
+<stop offset="0.51962" stop-color="#F89400" stop-opacity="0.86"/>
+<stop offset="0.77" stop-color="#F6AC00" stop-opacity="0.9"/>
+<stop offset="0.99" stop-color="#F3C90E" stop-opacity="0.83"/>
+</radialGradient>
+</defs>
+</svg>

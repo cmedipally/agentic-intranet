@@ -9,18 +9,19 @@ import './App.css'
 function App() {
   const [currentView, setCurrentView] = useState('home')
   const [selectedThread, setSelectedThread] = useState('contoso-agent')
-  const [showHighlights, setShowHighlights] = useState(false)
 
   const renderView = () => {
     switch (currentView) {
       case 'home':
-        return <HomeScreen onViewWeeklyWrap={() => setShowHighlights(true)} />
+        return <HomeScreen onViewWeeklyWrap={() => setCurrentView('highlights')} />
       case 'weekly-wrapped':
         return <WeeklyWrappedResponse onCreateAudioSummary={() => setCurrentView('audio-summary')} />
       case 'audio-summary':
         return <AudioSummary />
+      case 'highlights':
+        return <HighlightsFlow onClose={() => setCurrentView('home')} />
       default:
-        return <HomeScreen onViewWeeklyWrap={() => setShowHighlights(true)} />
+        return <HomeScreen onViewWeeklyWrap={() => setCurrentView('highlights')} />
     }
   }
 
@@ -34,7 +35,6 @@ function App() {
       <main className="main-content">
         {renderView()}
       </main>
-      {showHighlights && <HighlightsFlow onClose={() => setShowHighlights(false)} />}
     </div>
   )
 }

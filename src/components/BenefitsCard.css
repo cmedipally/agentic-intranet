@@ -1,0 +1,175 @@
+.benefits-card {
+  background: var(--color-neutral-bg-1, #ffffff);
+  border: 1px solid #EDEBE9;
+  border-radius: 24px;
+  padding: 20px 20px 2px 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 441px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.14), 0px 0px 2px 0px rgba(0,0,0,0.12);
+}
+
+.benefits-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  margin-bottom: 0;
+}
+
+.benefits-card-title {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--color-neutral-fg-1, #242424);
+  margin: 0;
+}
+
+.benefits-settings-btn {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #616161;
+  transition: all 0.2s;
+}
+
+.benefits-settings-btn:hover {
+  background: #f5f5f5;
+  color: #242424;
+}
+
+.benefits-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  padding-top: 19px;
+}
+
+.benefits-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefits-activity-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 56px;
+  padding: 0;
+}
+
+.benefits-activity-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-icon-img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
+}
+
+.benefits-icon-first {
+  width: 40px;
+  height: 40px;
+}
+
+.benefits-icon-img-first {
+  width: 40px;
+  height: 40px;
+}
+
+.benefits-activity-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+}
+
+.benefits-activity-title {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #242424;
+  margin: 0 0 2px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.benefits-activity-date {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #616161;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.benefits-insights {
+  background: #eaf6ff;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.benefits-insights-text {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #242424;
+  margin: 0;
+}
+
+.benefits-footer {
+  padding-top: 6px;
+  padding-bottom: 20px;
+}
+
+.benefits-summarize-btn {
+  width: auto;
+  min-width: 96px;
+  height: 32px;
+  padding: 5px 12px;
+  background: var(--color-neutral-bg-1, white);
+  border: 1px solid var(--color-neutral-stroke-1, #d1d1d1);
+  border-radius: 4px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-neutral-fg-1, #242424);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-summarize-btn:hover {
+  background: var(--color-neutral-bg-3, #f5f5f5);
+  border-color: var(--color-neutral-stroke-1-hover, #c7c7c7);
+}
+
+.benefits-summarize-btn:active {
+  background: var(--color-neutral-bg-4, #ebebeb);
+}

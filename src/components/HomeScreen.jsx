@@ -1,12 +1,19 @@
 import { useState, useEffect } from 'react'
-import WeeklyWrappedCard from './WeeklyWrappedCard'
+import EngageCard from './EngageCard'
+import BenefitsCard from './BenefitsCard'
+import LearningsCard from './LearningsCard'
 import './HomeScreen.css'
 
 // Import home page assets
-import lockupColor1 from '../assets/home-icons/lockup-color1.svg'
-import lockupColor2 from '../assets/home-icons/lockup-color2.svg'
-import lockupCheckmark from '../assets/home-icons/lockup-checkmark.svg'
-import promptStarterIcon from '../assets/home-icons/prompt-starter-icon.svg'
+import zavaCoreLogo from '../assets/home-icons/zavacore-icon.png'
+import lockupCheckmark from '../assets/home-icons/checkmark-starburst.svg'
+import corpCommsBg from '../assets/home-icons/corp-comms-bg.png'
+import arSiteIcon from '../assets/home-icons/ar-site-icon.png'
+import shareIconCorrect from '../assets/home-icons/share-icon-correct.png'
+import bgBase from '../assets/home-icons/bg-base.png'
+import radialGradient from '../assets/home-icons/radial-gradient.png'
+import gradientFade from '../assets/home-icons/gradient-fade.png'
+import replayIconNew from '../assets/home-icons/replay-icon-new.svg'
 import avatarSerena from '../assets/home-icons/avatar-serena.png'
 import avatarDalaya from '../assets/home-icons/avatar-dalaya.png'
 import avatarNoih from '../assets/home-icons/avatar-noih.png'
@@ -46,47 +53,33 @@ import priorityDot3 from '../assets/priority-icons/Active-2.png'
 import priorityDot4 from '../assets/priority-icons/Active-3.png'
 
 // Import header assets
-import headerAgentColor1 from '../assets/header-icons/Agent/Color 1.png'
-import headerAgentColor2 from '../assets/header-icons/Agent/Color 2.png'
-import headerText from '../assets/header-icons/Agent/Text.png'
-import headerChevron from '../assets/header-icons/Agent/Shape.png'
-import splitBtn1 from '../assets/header-icons/Agent/Shape-1.png'
-import splitBtn2 from '../assets/header-icons/Agent/Shape-4.png'
-import headerBtn2 from '../assets/header-icons/Agent/Shape-2.png'
-import headerBtn3 from '../assets/header-icons/Agent/Shape-3.png'
+import zAppBarLogo from '../assets/home-icons/z-appbar-new.png'
+import chevronDownIcon from '../assets/home-icons/chevron-down-breadcrumb.svg'
+import composeIcon from '../assets/home-icons/compose-icon-new.svg'
+import chevronSplitIcon from '../assets/home-icons/chevron-split-new.svg'
+import shieldTaskIcon from '../assets/home-icons/shield-task-new.svg'
 
 const HomeScreen = ({ onViewWeeklyWrap }) => {
   const [messageInput, setMessageInput] = useState('')
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 100)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const promptStarters = [
     {
-      title: 'Benefits action',
-      text: 'Check status of your recent ',
-      highlight: 'claim',
-      reason: 'Your close connection'
+      title: 'Plan my day',
+      text: 'What should I prioritize based on my schedule?',
+      highlight: '',
+      reason: ''
     },
     {
-      title: 'Daily priorities',
-      text: 'Write an agenda for ',
-      highlight: 'my next meeting',
-      reason: 'Arrive prepared'
+      title: 'Take action',
+      text: 'Find marketing documents that need my feedback',
+      highlight: '',
+      reason: ''
     },
     {
-      title: 'Suggested for you',
-      text: 'Catch me up on my company ',
-      highlight: 'news',
-      reason: 'Recently shared with you'
+      title: 'Catch up',
+      text: 'Highlight town hall updates relevant to my work',
+      highlight: '',
+      reason: ''
     }
   ]
 
@@ -99,103 +92,103 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
 
   const actionCards = [
     { title: 'Order lunch', subtitle: 'Cafe', icon: avocadoLove },
-    { title: 'Submit a claim', subtitle: 'Perks +', icon: sunFace },
-    { title: 'Ask a question', subtitle: 'Help Desk', icon: headphone },
+    { title: 'Submit time off', subtitle: 'HR', icon: sunFace },
+    { title: 'Ask a question', subtitle: 'Help desk', icon: headphone },
     { title: 'Book a shuttle', subtitle: 'Transportation', icon: lightRail },
-    { title: 'View benefits', subtitle: 'Ask HR', icon: speechBalloon },
-    { title: 'View Paystub', subtitle: 'ADP', icon: yenBanknote }
+    { title: 'Paystub', subtitle: 'ADP', icon: yenBanknote },
+    { title: 'Clock in', subtitle: 'Time management', icon: speechBalloon }
   ]
 
   return (
     <div className="home-screen">
-      <header className={`agent-header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="header-breadcrumb">
-          {isScrolled ? (
-            <button className="breadcrumb-button compact">
-              <div className="header-agent-icon">
-                <img src={lockupColor1} alt="" className="compact-icon-layer" />
-                <img src={lockupColor2} alt="" className="compact-icon-layer" />
-              </div>
-              <span className="agent-name-text">Agent Name</span>
-              <img src={headerChevron} alt="" className="header-chevron-img" />
-            </button>
-          ) : (
-            <button className="breadcrumb-button">
-              <div className="header-agent-icon">
-                <img src={headerAgentColor1} alt="" className="header-icon-layer" />
-                <img src={headerAgentColor2} alt="" className="header-icon-layer" />
-              </div>
-              <img src={headerText} alt="" className="header-text-img" />
-              <img src={headerChevron} alt="" className="header-chevron-img" />
-            </button>
-          )}
+      <header className="agent-header">
+        <div className="header-left-nav">
+          <div className="z-appbar-logo">
+            <img src={zAppBarLogo} alt="" className="z-appbar-img" />
+          </div>
+          <button className="breadcrumb-button">
+            <span className="breadcrumb-text">Zava agent</span>
+            <img src={chevronDownIcon} alt="" className="chevron-down-img" />
+          </button>
         </div>
-        <div className="agent-actions">
+        <div className="header-right-nav">
           <div className="split-button-group">
-            <button className="split-button-left">
-              <img src={splitBtn1} alt="" className="split-icon" />
+            <button className="split-button-primary">
+              <img src={composeIcon} alt="" className="compose-icon" />
             </button>
-            <button className="split-button-right">
-              <img src={splitBtn2} alt="" className="split-icon" />
+            <button className="split-button-secondary">
+              <img src={chevronSplitIcon} alt="" className="chevron-icon" />
             </button>
           </div>
-          <button className="action-btn">
-            <img src={headerBtn2} alt="" className="header-btn-icon" />
+          <button className="protection-btn">
+            <img src={shieldTaskIcon} alt="" className="shield-icon" />
           </button>
-          <button className="action-btn">
-            <img src={headerBtn3} alt="" className="header-btn-icon" />
+          <button className="more-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <circle cx="5" cy="10" r="1.5"/>
+              <circle cx="10" cy="10" r="1.5"/>
+              <circle cx="15" cy="10" r="1.5"/>
+            </svg>
           </button>
         </div>
       </header>
 
       <div className="home-content">
+        <div className="golden-gradient-overlay">
+          <div className="background-base">
+            <img src={bgBase} alt="" className="bg-base-img" />
+            <div className="bg-blend-overlay"></div>
+          </div>
+          <div className="radial-gradient-wrapper">
+            <img src={radialGradient} alt="" className="radial-gradient-img" />
+          </div>
+          <div className="gradient-fade-wrapper">
+            <img src={gradientFade} alt="" className="gradient-fade-img" />
+          </div>
+        </div>
+
         <div className="agent-lockup">
           <div className="lockup-header">
             <div className="lockup-icon-wrapper">
               <div className="lockup-icon-container">
-                <img src={lockupColor1} alt="" className="lockup-icon-layer lockup-icon-color1" />
-                <img src={lockupColor2} alt="" className="lockup-icon-layer lockup-icon-color2" />
+                <img src={zavaCoreLogo} alt="" className="lockup-icon-single" />
               </div>
             </div>
-            <h1 className="lockup-title">Contoso Agent</h1>
+            <h1 className="lockup-title">ZavaCore Agent</h1>
           </div>
           <p className="lockup-subtitle">
-            <span>Created by Contoso</span>
+            <span>Created by ZavaCore</span>
             <img src={lockupCheckmark} alt="" className="lockup-checkmark-icon" />
           </p>
         </div>
 
-        <div className="chat-input-container">
-          <div className="chat-input">
+        <div className="home-chat-input-wrapper">
+          <div className="home-chat-input">
             <input
               type="text"
-              placeholder="Message Contoso agent"
+              placeholder="Message ZavaCore agent"
               value={messageInput}
               onChange={(e) => setMessageInput(e.target.value)}
             />
-            <div className="chat-input-actions">
-              <button className="chat-input-btn chat-input-add">
+            <div className="home-chat-controls">
+              <button className="home-chat-btn home-chat-plus" aria-label="Add">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </button>
-              <button className="chat-input-btn">
+              <button className="home-chat-btn home-chat-labeled" aria-label="Tools">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M5 7h10M5 13h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
                 <span>Tools</span>
               </button>
-              <button className="chat-input-btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="3" y="5" width="14" height="10" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                  <path d="M7 5V3M13 5V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+              <button className="home-chat-btn home-chat-labeled home-chat-sources" aria-label="Sources">
                 <span>Sources</span>
               </button>
-              <button className="chat-input-btn chat-input-mic">
+              <button className="home-chat-btn home-chat-mic" aria-label="Voice input">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="8" y="3" width="4" height="8" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                  <path d="M5 11a5 5 0 0010 0M10 15v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M10 2a3 3 0 00-3 3v5a3 3 0 006 0V5a3 3 0 00-3-3z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                  <path d="M5 10a5 5 0 0010 0M10 15v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
               </button>
             </div>
@@ -207,35 +200,73 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
             <button key={index} className="prompt-starter-card">
               <div className="prompt-card-header">
                 <div className="prompt-icon">
-                  <img src={promptStarterIcon} alt="" className="prompt-icon-svg" />
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2C8.897 2 8 2.897 8 4V8C8 9.103 8.897 10 10 10C11.103 10 12 9.103 12 8V4C12 2.897 11.103 2 10 2ZM10 12C8.897 12 8 12.897 8 14V16C8 17.103 8.897 18 10 18C11.103 18 12 17.103 12 16V14C12 12.897 11.103 12 10 12ZM4 8C2.897 8 2 8.897 2 10C2 11.103 2.897 12 4 12C5.103 12 6 11.103 6 10C6 8.897 5.103 8 4 8ZM16 8C14.897 8 14 8.897 14 10C14 11.103 14.897 12 16 12C17.103 12 18 11.103 18 10C18 8.897 17.103 8 16 8Z" fill="#242424"/>
+                  </svg>
                 </div>
-                <div className="prompt-feedback-btns">
-                  <button className="feedback-btn">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M4.5 7V2.5L8 1L8.5 5H12.5C13.0523 5 13.5 5.44772 13.5 6V7.5C13.5 7.66667 13.4833 7.83333 13.45 8L12 12.5C11.8833 12.9167 11.5 13.2 11.0667 13.2H5.5C4.94772 13.2 4.5 12.7523 4.5 12.2V7ZM4.5 7H2.5V13H4.5V7Z" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                  <button className="feedback-btn">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M11.5 9V13.5L8 15L7.5 11H3.5C2.94772 11 2.5 10.5523 2.5 10V8.5C2.5 8.33333 2.51667 8.16667 2.55 8L4 3.5C4.11667 3.08333 4.5 2.8 4.93333 2.8H10.5C11.0523 2.8 11.5 3.24772 11.5 3.8V9ZM11.5 9H13.5V3H11.5V9Z" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                </div>
+                <div className="prompt-title">{prompt.title}</div>
               </div>
               <div className="prompt-content">
-                <div className="prompt-title">{prompt.title}</div>
-                <div className="prompt-text">
-                  {prompt.text}
-                  <span className="prompt-highlight">{prompt.highlight}</span>
-                </div>
+                <div className="prompt-text">{prompt.text}</div>
               </div>
             </button>
           ))}
           <button className="see-more">See more ›</button>
         </div>
 
+        <div className="catch-up-card">
+          <img src={corpCommsBg} alt="" className="catch-up-bg-image" />
+          <div className="catch-up-gradient-overlay"></div>
+
+          <div className="catch-up-container">
+            <div className="catch-up-header">
+              <img src={arSiteIcon} alt="" className="catch-up-site-icon" />
+              <div className="catch-up-actions">
+                <button className="catch-up-action-btn" aria-label="Share">
+                  <div className="catch-up-icon-container">
+                    <img src={shareIconCorrect} alt="" className="catch-up-action-icon" />
+                  </div>
+                </button>
+                <button className="catch-up-action-btn" aria-label="More options">
+                  <div className="catch-up-icon-container">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="3" cy="8" r="1.5" />
+                      <circle cx="8" cy="8" r="1.5" />
+                      <circle cx="13" cy="8" r="1.5" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div className="catch-up-content">
+              <div className="catch-up-title-plate">
+                <p className="catch-up-main-title">
+                  Carole, here's your <span className="catch-up-title-italic">daily</span> update
+                  <br />
+                  <span className="catch-up-subtitle">Zava highlights, personalized for you</span>
+                </p>
+                <button className="catch-up-cta-btn">
+                  <img src={replayIconNew} alt="" className="catch-up-cta-icon" />
+                  <span>Catch up</span>
+                </button>
+              </div>
+
+              <div className="catch-up-pagination">
+                <div className="catch-up-progress-bar catch-up-progress-active">
+                  <div className="catch-up-progress-fill"></div>
+                </div>
+                <div className="catch-up-progress-bar"></div>
+                <div className="catch-up-progress-bar"></div>
+                <div className="catch-up-progress-bar"></div>
+                <div className="catch-up-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="cards-row">
-          <WeeklyWrappedCard onViewWrap={onViewWeeklyWrap} />
+          <EngageCard />
 
           <div className="right-cards-column">
             <div className="people-card">
@@ -253,118 +284,91 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
                   </svg>
                 </button>
               </div>
+              <button className="people-catch-up-btn">
+                Catch up with coworkers
+              </button>
             </div>
 
             <div className="your-work-card">
-              <h3 className="your-work-title">Your work</h3>
-              <div className="your-work-grid">
-                <div className="work-stat-item">
-                  <div className="work-stat-icon mention-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                      <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 12a1 1 0 110-2 1 1 0 010 2zm1-3.5v.5a1 1 0 11-2 0v-1a1 1 0 011-1 1.5 1.5 0 10-1.5-1.5 1 1 0 11-2 0 3.5 3.5 0 117 0 3.45 3.45 0 01-1.5 2.86V10.5z"/>
-                    </svg>
+              <div className="activity-content">
+                <div className="activity-items">
+                  <div className="activity-item">
+                    <div className="activity-icon-circle">
+                      <svg width="24" height="24" viewBox="0 0 20 20" fill="white">
+                        <path d="M6 2h8a4 4 0 014 4v6a4 4 0 01-4 4h-2l-4 3v-3H6a4 4 0 01-4-4V6a4 4 0 014-4z"/>
+                      </svg>
+                    </div>
+                    <div className="activity-item-text">
+                      <div className="activity-number">12 comments</div>
+                      <div className="activity-label">in Manufacturin...</div>
+                    </div>
                   </div>
-                  <div className="work-stat-number">5</div>
-                  <div className="work-stat-label">Mentions of you</div>
-                </div>
-                <div className="work-stat-item">
-                  <div className="work-stat-icon comment-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                      <path d="M6 2h8a4 4 0 014 4v6a4 4 0 01-4 4h-2l-4 3v-3H6a4 4 0 01-4-4V6a4 4 0 014-4z"/>
-                    </svg>
+
+                  <div className="activity-item">
+                    <div className="activity-icon-circle">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
+                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 12a1 1 0 110-2 1 1 0 010 2zm1-3.5v.5a1 1 0 11-2 0v-1a1 1 0 011-1 1.5 1.5 0 10-1.5-1.5 1 1 0 11-2 0 3.5 3.5 0 117 0 3.45 3.45 0 01-1.5 2.86V10.5z"/>
+                      </svg>
+                    </div>
+                    <div className="activity-item-text">
+                      <div className="activity-number">3 mentions</div>
+                      <div className="activity-label">across several files</div>
+                    </div>
                   </div>
-                  <div className="work-stat-number">8</div>
-                  <div className="work-stat-label">File comments</div>
-                </div>
-                <div className="work-stat-item">
-                  <div className="work-stat-icon action-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                      <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm4.707 6.707l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 11.586l4.293-4.293a1 1 0 011.414 1.414z"/>
-                    </svg>
+
+                  <div className="activity-item">
+                    <div className="activity-icon-circle">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
+                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm4.707 6.707l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 11.586l4.293-4.293a1 1 0 011.414 1.414z"/>
+                      </svg>
+                    </div>
+                    <div className="activity-item-text">
+                      <div className="activity-number">8 tasks</div>
+                      <div className="activity-label">action items</div>
+                    </div>
                   </div>
-                  <div className="work-stat-number">12</div>
-                  <div className="work-stat-label">Action items</div>
                 </div>
+
+                <button className="activity-summarize-btn">
+                  Summarize updates
+                </button>
+
+                <button className="activity-next-btn">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M5.5 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </div>
 
         <div className="action-cards">
-          <div className="action-cards-grid">
-            {actionCards.map((card, index) => (
-              <button key={index} className="action-card">
-                <img src={card.icon} alt="" className="action-card-icon" />
-                <div className="action-card-content">
-                  <div className="action-card-title">{card.title}</div>
-                  <div className="action-card-subtitle">{card.subtitle}</div>
-                </div>
-              </button>
-            ))}
+          <div className="action-cards-container">
+            <div className="action-cards-grid">
+              {actionCards.map((card, index) => (
+                <button key={index} className="action-card">
+                  <div className="action-card-icon-circle">
+                    <img src={card.icon} alt="" className="action-card-icon" />
+                  </div>
+                  <div className="action-card-content">
+                    <div className="action-card-title">{card.title}</div>
+                    <div className="action-card-subtitle">{card.subtitle}</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+            <button className="action-cards-next-btn" aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M5.5 3l5 5-5 5" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
         </div>
 
         <div className="bottom-cards-row">
-          <div className="perks-card">
-            <div className="perks-header">
-              <img src={perksVivaIcon} alt="Viva Engage" className="perks-viva-icon" />
-              <img src={perksTitle} alt="Engage updates" className="perks-title-img" />
-            </div>
-            <div className="perks-avatars">
-              <img src={perksAvatar} alt="User avatars" className="perks-avatar-cluster" />
-            </div>
-            <div className="perks-heading">
-              <img src={perksPrimaryText} alt="New updates" className="perks-primary-text" />
-            </div>
-            <div className="perks-message">
-              <img src={perksAiBody} alt="Activity summary" className="perks-ai-body" />
-            </div>
-            <div className="perks-action">
-              <img src={perksSummarizeButton} alt="Summarize all activity" className="perks-summarize-btn" />
-            </div>
-          </div>
-
-          <div className="priorities-card">
-            <div className="priorities-header">
-              <img src={priorityTitle} alt="Top priorities" className="priorities-title-img" />
-              <button className="priorities-settings-btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10.5 3.5a1 1 0 10-2 0v.55a5.5 5.5 0 000 10.9v.55a1 1 0 102 0v-.55a5.5 5.5 0 000-10.9V3.5zm-1 2.45a4.5 4.5 0 010 8.1V5.95z" fill="currentColor"/>
-                  <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                </svg>
-              </button>
-            </div>
-            <div className="priorities-list">
-              <div className="priority-item">
-                <img src={priorityCheckbox1} alt="" className="priority-checkbox-img" />
-                <img src={priorityAvatar1} alt="" className="priority-avatar-img" />
-                <img src={priorityText1} alt="Create a brief for Summer Campaign" className="priority-text-img" />
-                <img src={priorityButton1} alt="Draft brief" className="priority-button-img" />
-              </div>
-              <div className="priority-item">
-                <img src={priorityCheckbox2} alt="" className="priority-checkbox-img" />
-                <img src={priorityAvatar2} alt="" className="priority-avatar-img" />
-                <img src={priorityText2} alt="Reply to Fw: Q3 Launch" className="priority-text-img" />
-                <img src={priorityButton2} alt="Draft reply" className="priority-button-img" />
-              </div>
-              <div className="priority-item">
-                <img src={priorityCheckbox3} alt="" className="priority-checkbox-img" />
-                <img src={priorityAvatar3} alt="" className="priority-avatar-img" />
-                <img src={priorityText3} alt="Create social media post" className="priority-text-img" />
-                <img src={priorityButton3} alt="Draft illustration" className="priority-button-img" />
-              </div>
-            </div>
-            <div className="priorities-pagination">
-              <img src={priorityNavLeft} alt="Previous" className="pagination-nav-img" />
-              <div className="pagination-dots">
-                <img src={priorityDot1} alt="" className="pagination-dot-img" />
-                <img src={priorityDot2} alt="" className="pagination-dot-img" />
-                <img src={priorityDot3} alt="" className="pagination-dot-img" />
-                <img src={priorityDot4} alt="" className="pagination-dot-img" />
-              </div>
-              <img src={priorityNavRight} alt="Next" className="pagination-nav-img" />
-            </div>
-          </div>
+          <BenefitsCard />
+          <LearningsCard />
         </div>
       </div>
     </div>
