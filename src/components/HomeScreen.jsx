@@ -24,6 +24,7 @@ import lightRail from '../assets/home-icons/light-rail.png'
 import speechBalloon from '../assets/home-icons/speech-balloon.png'
 import yenBanknote from '../assets/home-icons/yen-banknote.png'
 import shapeIcon from '../assets/home-icons/shape-icon.png'
+import promptIcon from '../assets/home-icons/prompt-icon.png'
 // Import perks assets
 import perksVivaIcon from '../assets/perks-icons/viva-engage-icon.svg'
 import perksTitle from '../assets/perks-icons/title.svg'
@@ -202,9 +203,7 @@ const HomeScreen = ({ onViewWeeklyWrap }) => {
             <button key={index} className="prompt-starter-card">
               <div className="prompt-card-header">
                 <div className="prompt-icon">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 2C8.897 2 8 2.897 8 4V8C8 9.103 8.897 10 10 10C11.103 10 12 9.103 12 8V4C12 2.897 11.103 2 10 2ZM10 12C8.897 12 8 12.897 8 14V16C8 17.103 8.897 18 10 18C11.103 18 12 17.103 12 16V14C12 12.897 11.103 12 10 12ZM4 8C2.897 8 2 8.897 2 10C2 11.103 2.897 12 4 12C5.103 12 6 11.103 6 10C6 8.897 5.103 8 4 8ZM16 8C14.897 8 14 8.897 14 10C14 11.103 14.897 12 16 12C17.103 12 18 11.103 18 10C18 8.897 17.103 8 16 8Z" fill="#242424"/>
-                  </svg>
+                  <img src={promptIcon} alt="" className="prompt-icon-img" />
                 </div>
                 <div className="prompt-title">{prompt.title}</div>
               </div>
